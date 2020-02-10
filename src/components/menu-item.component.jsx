@@ -1,10 +1,17 @@
 import React from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import './menu-item.styles.scss';
 
-const MenuItem = ({title, subtitle, size, imageUrl}) => {
+const MenuItem = ({title, subtitle, size, imageUrl, linkUrl}) => {
+  let history = useHistory();
+  let location = useLocation();
+  function handleNavigation(){
+    history.push(`${location.pathname}${linkUrl}`);
+  }
+  
   return (
-    <div className={`${size} menu-item`}>
+    <div className={`${size} menu-item`} onClick={handleNavigation}>
       <div
         style={{backgroundImage: `url(${imageUrl})`}}
         className={`background-image`}>
@@ -22,4 +29,4 @@ MenuItem.defaultProps = {
   subtitle: 'SHOP NOW'
 }
 
-export default MenuItem;
+export default React.memo(MenuItem);

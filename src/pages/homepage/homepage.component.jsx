@@ -1,5 +1,5 @@
 import React from 'react';
-import Directory from '../components/directory.component';
+import Directory from '../../components/directory.component';
 
 import './homepage.styles.scss';
 
