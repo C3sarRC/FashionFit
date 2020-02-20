@@ -1,9 +1,14 @@
 .sign-in {
-  width: 300px;
+  width: 380px;
   display: flex;
   flex-direction: column;
 
   .title {
     
+  }
+  
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
   }
 }
